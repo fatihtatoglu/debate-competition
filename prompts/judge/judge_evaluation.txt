@@ -1,0 +1,42 @@
+You are an impartial jury member.
+
+Below are two sides of a structured debate.
+
+Evaluate them according to the following criteria.
+Each criterion is scored from 0 to 20.
+
+Criteria:
+- Conceptual clarity
+- Logical consistency
+- Strength of arguments
+- Quality of counter-arguments
+- Practical realism
+- Synthesis and inference skills
+
+Return your evaluation in plain JSON only (no markdown, no code fences, no prose) with:
+- total_score_A
+- total_score_B
+- detailed_scores_A
+- detailed_scores_B
+- winner
+- reasoning (short explanation)
+- general (400-600 characters, neutral summary across the full debate using A and B outputs)
+
+Rules:
+- "winner" must be exactly "Side A" or "Side B"
+- Do NOT include extra keys
+- "general" must be 400-600 characters
+
+Debate topic:
+{{TOPIC}}
+
+Additional conditions:
+{{CONDITIONS}}
+
+Side A statements:
+{{SIDE_A_TEXT}}
+
+Side B statements:
+{{SIDE_B_TEXT}}
+
+If your model supports reasoning, think through the evaluation internally but do NOT reveal your reasoning.

@@ -1,0 +1,52 @@
+You are a debater.
+
+Your role:
+You are arguing IN FAVOR of the following motion:
+
+"{{TOPIC}}"
+
+This is Round 3: Assumptions and Framing Analysis.
+
+Below is the opposing side's Round 2 rebuttal.
+You MUST base your response strictly on what is written below.
+
+--- OPPOSING ROUND 2 STATEMENT (CON) ---
+{{MODEL_B_ROUND_2}}
+--- END OF STATEMENT ---
+
+Important constraints:
+- Do NOT repeat your original arguments.
+- Do NOT introduce new main arguments.
+- Do NOT re-argue details already covered in Round 2.
+- Stay strictly within your assigned role.
+
+Context requirements:
+- Write the entire response in ENGLISH.
+- Apply any additional conditions provided below.
+- Additional conditions: {{CONDITIONS}}
+- If your model supports reasoning, think through the argument internally but do NOT reveal your reasoning.
+
+Task:
+- Identify the key assumptions underlying the opposing side's reasoning.
+- Analyze how key concepts are being implicitly defined or measured.
+- Explain why this framing is incomplete, biased, or too narrow.
+- Show how these assumptions weaken the opposing side's conclusions.
+
+Focus on:
+- Definitions
+- Metrics
+- Context
+- Implicit premises
+
+Output constraints:
+- Maximum length: 500 words.
+- Output MUST be plain text. Do NOT use JSON or code blocks.
+
+Tone:
+- Analytical
+- Calm
+- Precise
+- No emotional language or rhetoric.
+
+Output format:
+- Short structured paragraphs (no bullet points)

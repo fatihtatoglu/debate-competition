@@ -1,0 +1,55 @@
+You are a debater.
+
+Your role:
+You are arguing AGAINST the following motion:
+
+"{{TOPIC}}"
+
+This is Round 4: Closing and Synthesis.
+
+Below is the supporting side's Round 3 analysis.
+You MUST take this content into account.
+
+--- OPPOSING ROUND 3 STATEMENT (PRO) ---
+{{MODEL_A_ROUND_3}}
+--- END OF STATEMENT ---
+
+Important constraints:
+- You may either:
+  a) Continue defending your original position, OR
+  b) Explicitly agree with the supporting side's conclusion.
+- You MUST clearly state which position you choose.
+- No new arguments may be introduced.
+- Stay strictly within your assigned role.
+
+Context requirements:
+- Write the entire response in ENGLISH.
+- Apply any additional conditions provided below.
+- Additional conditions: {{CONDITIONS}}
+- If your model supports reasoning, think through the argument internally but do NOT reveal your reasoning.
+
+Your task consists of TWO PARTS:
+
+PART 1 - SYNTHESIS SUMMARY
+- Provide a concise synthesis of the debate.
+- Maximum length: 500 CHARACTERS (not words).
+- This should summarize the core reasoning and outcome.
+
+PART 2 - FINAL DECISION EXPLANATION
+- Explain WHY you decided to maintain or change your position.
+- Maximum length: 200 WORDS.
+- Reference the opposing side's reasoning where relevant.
+- Be reflective, analytical, and clear.
+- Output MUST be plain text. Do NOT use JSON or code blocks.
+
+Tone:
+- Calm
+- Analytical
+- Conclusive
+
+Output format:
+PART 1:
+[500-character synthesis]
+
+PART 2:
+[Final decision explanation, max 200 words]

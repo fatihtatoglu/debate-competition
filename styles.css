@@ -1,0 +1,354 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f6f7fb;
+  color: #222;
+}
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 280px;
+  background: #1b2a7a;
+  color: #e9f1ff;
+  padding: 16px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.sidebar h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: #dbeafe;
+  border: 1px solid #2742b3;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.nav-item.active {
+  color: #0f172a;
+  border-color: #7dd3fc;
+  background: #7dd3fc;
+}
+.nav-group {
+  margin-bottom: 10px;
+}
+.nav-group-title {
+  cursor: pointer;
+  list-style: none;
+  font-weight: bold;
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+.nav-group-title::-webkit-details-marker {
+  display: none;
+}
+.nav-group-items {
+  margin-top: 6px;
+}
+.content {
+  flex: 1;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.debate {
+  margin-bottom: 32px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+.meta {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.round {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+.round-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.round-desc {
+  font-weight: normal;
+  font-size: 12px;
+  color: #555;
+  margin-top: 2px;
+}
+.prompt-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.response-row {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.response-row .panel {
+  max-width: 900px;
+}
+.response-a {
+  justify-content: flex-end;
+}
+.response-b {
+  justify-content: flex-start;
+}
+.panel {
+  flex: 1;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.panel-title {
+  font-weight: bold;
+  margin: 1rem 0;
+  font-size: 14px;
+}
+summary.panel-title {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+summary.panel-title::-webkit-details-marker {
+  display: none;
+}
+.toggle-icon::before {
+  content: ">";
+  display: inline-block;
+  font-size: 12px;
+  color: #4b5563;
+}
+details[open] .toggle-icon::before {
+  content: "v";
+}
+.panel-content {
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.model-output {
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+.side-a {
+  align-self: flex-end;
+  background: #eef6ff;
+  border-color: #d7e9ff;
+}
+.side-b {
+  align-self: flex-start;
+  background: #fff4e8;
+  border-color: #ffe0bf;
+}
+.prompt {
+  background: #f1f1f1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.prompt pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 6px 0 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 6px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.jury {
+  margin-top: 18px;
+  background: #eaf7f0;
+  border: 1px solid #cce9da;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+}
+.jury pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #fff;
+  border: 1px solid #d9eadf;
+  border-radius: 6px;
+  padding: 6px;
+  margin-top: 8px;
+}
+.totals {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.totals th,
+.totals td {
+  border: 1px solid #d5e6ff;
+  padding: 6px 8px;
+  text-align: left;
+}
+.totals th {
+  background: #e3f0ff;
+}
+.scores {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+.scores th,
+.scores td {
+  border: 1px solid #d9eadf;
+  padding: 8px 10px;
+  text-align: left;
+}
+.scores th {
+  background: #e7f5ef;
+}
+.winner {
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0f5132;
+  text-align: center;
+}
+.winning-reason {
+  margin-top: 8px;
+}
+.reasoning {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed #d1d5db;
+}
+.jury-reasoning {
+  margin: 6px 0 8px;
+  font-size: 12px;
+  color: #2f4f3a;
+}
+.jury-winning-reason {
+  margin: 1rem 0 2rem;
+  font-size: 12px;
+}
+.general {
+  background: #f0f6ff;
+  border: 1px solid #d5e6ff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.totals-card {
+  background: #ffffff;
+  border: 1px solid #e6eef8;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.human-form {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+.form-row {
+  margin-top: 10px;
+  display: grid;
+  gap: 6px;
+}
+.form-row textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+.form-row input[readonly] {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.form-actions {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form-actions button {
+  background: #1f2937;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.form-status {
+  font-size: 12px;
+  color: #0f5132;
+}
+.signature {
+  margin-top: 24px;
+  padding: 12px 0;
+  border-top: 1px solid #e5e7eb;
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+}
+.signature a {
+  color: inherit;
+  text-decoration: none;
+}
+.signature a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1000px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+  .response-row {
+    flex-direction: column;
+  }
+  .response-row .side-a,
+  .response-row .side-b {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,52 @@
+You are a debater.
+
+Your role:
+You are arguing AGAINST the following motion:
+
+"{{TOPIC}}"
+
+This is Round 3: Assumptions and Framing Analysis.
+
+Below is the supporting side's Round 2 rebuttal.
+You MUST base your response strictly on what is written below.
+
+--- OPPOSING ROUND 2 STATEMENT (PRO) ---
+{{MODEL_A_ROUND_2}}
+--- END OF STATEMENT ---
+
+Important constraints:
+- Do NOT repeat your original arguments.
+- Do NOT introduce new main arguments.
+- Do NOT re-argue details already covered in Round 2.
+- Stay strictly within your assigned role.
+
+Context requirements:
+- Write the entire response in ENGLISH.
+- Apply any additional conditions provided below.
+- Additional conditions: {{CONDITIONS}}
+- If your model supports reasoning, think through the argument internally but do NOT reveal your reasoning.
+
+Task:
+- Identify the key assumptions underlying the opposing side's reasoning.
+- Analyze how key concepts are being implicitly defined or measured.
+- Explain why this framing overlooks critical real-world constraints.
+- Show how these assumptions lead to overgeneralized conclusions.
+
+Focus on:
+- Definitions
+- Measurement bias
+- Organizational reality
+- Contextual blind spots
+
+Output constraints:
+- Maximum length: 500 words.
+- Output MUST be plain text. Do NOT use JSON or code blocks.
+
+Tone:
+- Analytical
+- Calm
+- Precise
+- No emotional language or rhetoric.
+
+Output format:
+- Short structured paragraphs (no bullet points)
