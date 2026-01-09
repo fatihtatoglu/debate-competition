@@ -21,9 +21,10 @@ Important constraints:
 - Stay strictly within your assigned role.
 
 Context requirements:
-- Write the entire response in ENGLISH.
+- Write the entire response in {{LANG}}.
 - Apply any additional conditions provided below.
 - Additional conditions: {{CONDITIONS}}
+- Output language must be {{LANG}}. Use that language only.
 - If your model supports reasoning, think through the argument internally but do NOT reveal your reasoning.
 
 Task:

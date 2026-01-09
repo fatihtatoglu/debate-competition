@@ -38,6 +38,7 @@ Required `.env` fields:
 
 - `TOPIC`
 - `CONDITIONS` (optional; additional constraints like geography or assumptions)
+- `LANG_CODE` (output language code: tr, en, de)
 - `MODEL_A_BACKEND` / `MODEL_B_BACKEND` (local or online)
 - `LOCAL_BASE_URL` (for local backend)
 - `ONLINE_BASE_URL` (for online backend)

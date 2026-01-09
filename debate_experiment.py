@@ -180,6 +180,7 @@ def run_jury_evaluation(
     judge_model: str,
     topic: str,
     conditions: str,
+    lang: str,
     history_a: List[Dict],
     history_b: List[Dict],
     blind: bool,
@@ -199,6 +200,7 @@ def run_jury_evaluation(
         {
             "TOPIC": topic,
             "CONDITIONS": conditions,
+            "LANG": lang,
             "SIDE_A_TEXT": side_a_text,
             "SIDE_B_TEXT": side_b_text,
         },
@@ -259,6 +261,7 @@ def run_debate(
     model_b: str,
     topic: str,
     conditions: str,
+    lang: str,
     blind_jury: bool,
 ):
     rounds = [
@@ -298,7 +301,7 @@ def run_debate(
 
         log(f"Round {i} started: {round_file}")
 
-        variables_a = {"TOPIC": topic, "CONDITIONS": conditions}
+        variables_a = {"TOPIC": topic, "CONDITIONS": conditions, "LANG": lang}
         variables_a.update(build_opponent_variables(i, history_b, "MODEL_B"))
         prompt_a = render_prompt(round_template_a, variables_a)
         messages_a.append({"role": "user", "content": prompt_a})
@@ -339,7 +342,7 @@ def run_debate(
 
         time.sleep(1)
 
-        variables_b = {"TOPIC": topic, "CONDITIONS": conditions}
+        variables_b = {"TOPIC": topic, "CONDITIONS": conditions, "LANG": lang}
         variables_b.update(build_opponent_variables(i, history_a, "MODEL_A"))
         prompt_b = render_prompt(round_template_b, variables_b)
         messages_b.append({"role": "user", "content": prompt_b})
@@ -388,6 +391,7 @@ def run_debate(
             judge_model=cfg["model"],
             topic=topic,
             conditions=conditions,
+            lang=lang,
             history_a=history_a,
             history_b=history_b,
             blind=blind_jury,
@@ -465,7 +469,7 @@ def run_debate(
         "id": unique_id(seen_ids),
         "topic": topic,
         "conditions": conditions,
-        "lang": LANG,
+        "lang": lang_code,
         "proposition": model_a,
         "opposition": model_b,
         "jury": ",".join(cfg["model"] for cfg in judge_configs),
@@ -489,10 +493,19 @@ def run_debate(
 
 
 if __name__ == "__main__":
-    load_dotenv()
+    load_dotenv(override=True)
 
     topic = require_env("TOPIC")
     conditions = os.getenv("CONDITIONS", "").strip()
+    lang_code = require_env("LANG_CODE").strip().lower()
+    lang_map = {
+        "tr": "TURKISH",
+        "en": "ENGLISH",
+        "de": "GERMAN",
+    }
+    if lang_code not in lang_map:
+        raise ValueError("LANG_CODE must be one of: tr, en, de")
+    lang = lang_map[lang_code]
     model_a_config = resolve_backend("MODEL_A")
     model_b_config = resolve_backend("MODEL_B")
     judge_configs = build_judge_configs()
@@ -537,5 +550,6 @@ if __name__ == "__main__":
         model_b_config["model"],
         topic,
         conditions,
+        lang,
         blind_jury,
     )

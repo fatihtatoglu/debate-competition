@@ -26,6 +26,7 @@ Rules:
 - "winner" must be exactly "Side A" or "Side B"
 - Do NOT include extra keys
 - "general" must be 400-600 characters
+- "reasoning" and "general" must be written in {{LANG}}
 
 Debate topic:
 {{TOPIC}}

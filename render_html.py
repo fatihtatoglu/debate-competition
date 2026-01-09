@@ -457,7 +457,7 @@ def build_html(records: list, css_href: str) -> str:
         )
         nav_groups.append(
             f"""
-            <details class="nav-group" open>
+            <details class="nav-group">
               <summary class="nav-group-title">{escape(topic)}</summary>
               <div class="nav-group-items">
                 {items_html}
@@ -528,7 +528,7 @@ def build_human_html(records: list, css_href: str) -> str:
         )
         nav_groups.append(
             f"""
-            <details class="nav-group" open>
+            <details class="nav-group">
               <summary class="nav-group-title">{escape(topic)}</summary>
               <div class="nav-group-items">
                 {items_html}
