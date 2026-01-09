@@ -2,3 +2,5 @@
 outputs/
 .env*
 !.env.example
+exports/
+export_csv.py
